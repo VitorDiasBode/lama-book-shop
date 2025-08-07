@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import mysql from "mysql";
 import cors from "cors"
 
@@ -35,8 +35,19 @@ app.post("/books", (req, res)=>{
     ];
 
     db.query(q,[values], (err, data)=>{
-        if(err) return res.json(req)
+        if(err) return res.json(err)
         return res.json("Book has been created")
+    })
+})
+
+app.delete("/books:id", (req,res) => {
+    console.log("delete")
+    const q = "DELETE FROM books WHERE id = ?";
+    const bookId = req.params.id;
+
+    db.query(q, bookId, (err, data) => {
+        if(err) return res.json(err)
+        return res.json("Book has been deleted")
     })
 })
 
