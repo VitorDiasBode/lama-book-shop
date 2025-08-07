@@ -20,13 +20,15 @@ function Books() {
     return (
         <div>
             <h1>Books</h1>
-            <article>
+            <article className='books'>
                 {books.map((book)=>(
                     <section className='book' key={book.id}>
                         {book.cover && <img src={book.cover} alt=''/>}
                         <h2>{book.title}</h2>
                         <p>{book.description}</p>
                         <span>{book.price}</span>
+                        <button className='delete'>Delete</button>
+                        <button className='update'>Update</button>
                     </section>  
                 ))}
             </article>
