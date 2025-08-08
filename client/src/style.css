@@ -6,7 +6,7 @@
     justify-content: center;
     text-align: center;
 }
-
+/* BOOKS */
 .books{
     display: flex;
     gap: 10px;
@@ -41,4 +41,25 @@ img{
     background-color: white;
     cursor: pointer;
     padding: 3px 6px;
+}
+
+/* UPDATE AND ADD FORM */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+.formButton {
+    border: none;
+    padding: 10px;
+    background-color: rgb(244, 142, 74);
+    color: white;
+    cursor: pointer;
 }

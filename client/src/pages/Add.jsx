@@ -35,7 +35,7 @@ function Add() {
       <input type='text' placeholder='Description' onChange={handleChange} name='description'/>
       <input type='text' placeholder='Cover' onChange={handleChange} name='cover'/>
       <input type='number' placeholder='Price' onChange={handleChange} name='price'/>
-      <button onClick={handleClick}>Add new Book</button>
+      <button className='formButton' onClick={handleClick}>Add new Book</button>
     </div>
   )
 }
