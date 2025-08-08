@@ -19,7 +19,6 @@ function Books() {
     }, [])
 
     const handleDelete = async (id) => {
-        console.log("apertou o delete");
         try {
             const res = await axios.delete(`http://localhost:8800/books/`+id);
             window.location.reload();
