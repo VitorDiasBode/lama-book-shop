@@ -11,12 +11,11 @@ function Add() {
     price:null,
   })
 
-  const navigate = useNavigate()
-
   const handleChange = (e) => {
     setBook( (prev) => ( {...prev, [e.target.name]:e.target.value} ) );
   }
-
+  
+  const navigate = useNavigate();
   const handleClick = async e =>{
     e.preventDefault();
     try {
@@ -26,7 +25,6 @@ function Add() {
       console.log(error);
     }
   }
-  console.log(book);
 
   return (
     <div className="form">
