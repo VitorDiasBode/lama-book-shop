@@ -11,6 +11,7 @@ function Books() {
             try{
                 const res = await axios.get("http://localhost:8800/books");
                 setBooks(res.data);
+                console.log(books);
             }catch(err){
                 console.log(err)
             }
@@ -22,7 +23,7 @@ function Books() {
         console.log("apertou o delete");
         try {
             const res = await axios.delete(`http://localhost:8800/books/`+id);
-            window.location.reload();
+            setBooks( (prevBooks) => prevBooks.filter( (book) => book.id !== id));
         } catch (err) {
             console.log(err);
         }
@@ -32,7 +33,7 @@ function Books() {
         <div>
             <h1>Books</h1>
             <article className='books'>
-                {books.map((book)=>(
+                {books.map( (book) => (
                     <section className='book' key={book.id}>
                         {book.cover && <img src={book.cover} alt=''/>}
                         <h2>{book.title}</h2>
